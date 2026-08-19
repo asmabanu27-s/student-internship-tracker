@@ -19,3 +19,6 @@ Thumbs.db
 
 # VS Code
 .vscode/
+
+# Database backups
+*.sql
