@@ -6,7 +6,7 @@ import SearchFilter from "./components/SearchFilter";
 
 const API_URL =
     import.meta.env.VITE_API_URL ||
-    "http://localhost:5000/api/applications";
+    "/api/applications";
 
 
 function App() {
