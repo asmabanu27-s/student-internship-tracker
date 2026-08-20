@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function ApplicationForm({ onApplicationAdded }) {
     const [formData, setFormData] = useState({
-        company_name: "",
+        canditate_name: "",
         role: "",
         applied_date: "",
         status: "Applied"
@@ -43,7 +43,7 @@ function ApplicationForm({ onApplicationAdded }) {
             setMessage("Application added successfully!");
 
             setFormData({
-                company_name: "",
+                canditate_name: "",
                 role: "",
                 applied_date: "",
                 status: "Applied"
@@ -68,8 +68,8 @@ function ApplicationForm({ onApplicationAdded }) {
 
                     <input
                         type="text"
-                        name="company_name"
-                        value={formData.company_name}
+                        name="canditate_name"
+                        value={formData.canditate_name}
                         onChange={handleChange}
                         placeholder="Enter company name"
                         required

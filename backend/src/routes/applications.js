@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
         if (search) {
             values.push(`%${search}%`);
             conditions.push(`
-                (company_name ILIKE $${values.length}
+                (canditate_name ILIKE $${values.length}
                 OR role ILIKE $${values.length})
             `);
         }
@@ -50,14 +50,14 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
     try {
-        const { company_name, role, applied_date, status } = req.body;
+        const { canditate_name, role, applied_date, status } = req.body;
 
         const result = await db.query(
             `INSERT INTO applications
-             (company_name, role, applied_date, status)
+             (canditate_name, role, applied_date, status)
              VALUES ($1, $2, $3, $4)
              RETURNING *`,
-            [company_name, role, applied_date, status]
+            [canditate_name, role, applied_date, status]
         );
 
         res.status(201).json(result.rows[0]);
@@ -73,17 +73,17 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
     try {
         const { id } = req.params;
-        const { company_name, role, applied_date, status } = req.body;
+        const { canditate_name, role, applied_date, status } = req.body;
 
         const result = await db.query(
             `UPDATE applications
-             SET company_name = $1,
+             SET canditate_name = $1,
                  role = $2,
                  applied_date = $3,
                  status = $4
              WHERE application_id = $5
              RETURNING *`,
-            [company_name, role, applied_date, status, id]
+            [canditate_name, role, applied_date, status, id]
         );
 
         if (result.rows.length === 0) {

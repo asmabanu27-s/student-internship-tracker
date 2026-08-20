@@ -100,12 +100,12 @@ function App() {
 
     // Open edit form
     const handleEdit = async (application) => {
-    const company_name = window.prompt(
+    const canditate_name = window.prompt(
         "Company Name:",
-        application.company_name
+        application.canditate_name
     );
 
-    if (company_name === null) return;
+    if (canditate_name === null) return;
 
     const role = window.prompt(
         "Role:",
@@ -137,7 +137,7 @@ function App() {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    company_name,
+                    canditate_name,
                     role,
                     applied_date,
                     status
@@ -189,8 +189,8 @@ function App() {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        company_name:
-                            editingApplication.company_name,
+                        canditate_name:
+                            editingApplication.canditate_name,
                         role:
                             editingApplication.role,
                         applied_date:
@@ -289,14 +289,14 @@ function App() {
                             <div className="form-group">
 
                                 <label>
-                                    Company Name
+                                    Canditate Name
                                 </label>
 
                                 <input
                                     type="text"
-                                    name="company_name"
+                                    name="canditate_name"
                                     value={
-                                        editingApplication.company_name
+                                        editingApplication.canditate_name
                                     }
                                     onChange={
                                         handleEditChange

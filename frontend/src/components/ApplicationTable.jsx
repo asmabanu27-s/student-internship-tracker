@@ -20,7 +20,7 @@ function ApplicationTable({ applications, onEdit, onDelete }) {
                     <tbody>
                         {applications.map((application) => (
                             <tr key={application.application_id}>
-                                <td>{application.company_name}</td>
+                                <td>{application.canditate_name}</td>
 
                                 <td>{application.role}</td>
 
