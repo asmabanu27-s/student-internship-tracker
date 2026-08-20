@@ -47,6 +47,35 @@ router.get("/", async (req, res) => {
     }
 });
 
+router.get("/id:", async (req, res) => {
+       try {
+        const { id } = req.params;
+
+        const result = await db.query(
+            "select * FROM applications WHERE application_id = $1 RETURNING *",
+            [id]
+        );
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({
+                error: "Application not found"
+            });
+        }
+
+        res.json({
+            message: "Application Fetched successfully",
+            application: result.rows[0]
+        });
+    } catch (error) {
+        console.error("Error Fetching application:", error.message);
+
+        res.status(500).json({
+            error: "Failed to fetch application"
+        });
+    }
+});
+
+
 
 router.post("/", async (req, res) => {
     try {
