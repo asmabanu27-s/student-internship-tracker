@@ -15,6 +15,7 @@ app.use(cors({
         "https://magenta-bienenstitch-b38612.netlify.app"
     ]
 }));
+
 app.use(express.json());
 
 app.use(
@@ -32,8 +33,14 @@ app.get("/", (req, res) => {
 });
 
 if (require.main === module) {
-    app.listen(PORT, () => {
-        console.log(`Server running on http://localhost:${PORT}`);
+    app.listen(PORT, async () => {
+        try {
+            await db.initializeDatabase();
+            console.log(`Server running on http://localhost:${PORT}`);
+        } catch (error) {
+            console.error("Failed to initialize database:", error);
+            process.exit(1);
+        }
     });
 }
 
