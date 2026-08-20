@@ -9,7 +9,7 @@ function ApplicationTable({ applications, onEdit, onDelete }) {
                 <table>
                     <thead>
                         <tr>
-                            <th>Company</th>
+                            <th>Candidate Name</th>
                             <th>Role</th>
                             <th>Applied Date</th>
                             <th>Status</th>
