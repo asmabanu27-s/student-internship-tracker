@@ -1,11 +1,10 @@
 [build]
-command = "npm install && npm --prefix backend install --omit=dev && npm --prefix frontend install && npm --prefix frontend run build"
-  publish = "./frontend/dist"
+  command = "npm install && npm --prefix backend install --omit=dev && npm --prefix frontend install && npm --prefix frontend run build"
+  publish = "frontend/dist"
 
 [functions]
-  directory = "./netlify/functions"
+  directory = "netlify/functions"
   node_bundler = "esbuild"
-  external_node_modules = ["express"]
 
 [[redirects]]
   from = "/api/*"
