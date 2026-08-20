@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function ApplicationForm({ onApplicationAdded }) {
     const [formData, setFormData] = useState({
-        canditate_name: "",
+        company_name: "",
         role: "",
         applied_date: "",
         status: "Applied"
@@ -43,7 +43,7 @@ function ApplicationForm({ onApplicationAdded }) {
             setMessage("Application added successfully!");
 
             setFormData({
-                canditate_name: "",
+                company_name: "",
                 role: "",
                 applied_date: "",
                 status: "Applied"
@@ -64,14 +64,14 @@ function ApplicationForm({ onApplicationAdded }) {
             <form onSubmit={handleSubmit}>
 
                 <div className="form-group">
-                    <label>Company Name</label>
+                    <label>Candidate Name</label>
 
                     <input
                         type="text"
-                        name="canditate_name"
-                        value={formData.canditate_name}
+                        name="company_name"
+                        value={formData.company_name}
                         onChange={handleChange}
-                        placeholder="Enter company name"
+                        placeholder="Enter Candidate name"
                         required
                     />
                 </div>

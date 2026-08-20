@@ -100,12 +100,12 @@ function App() {
 
     // Open edit form
     const handleEdit = async (application) => {
-    const canditate_name = window.prompt(
+    const company_name = window.prompt(
         "Company Name:",
-        application.canditate_name
+        application.company_name
     );
 
-    if (canditate_name === null) return;
+    if (company_name === null) return;
 
     const role = window.prompt(
         "Role:",
@@ -137,7 +137,7 @@ function App() {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    canditate_name,
+                    company_name,
                     role,
                     applied_date,
                     status
@@ -189,8 +189,8 @@ function App() {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        canditate_name:
-                            editingApplication.canditate_name,
+                        company_name:
+                            editingApplication.company_name,
                         role:
                             editingApplication.role,
                         applied_date:
@@ -294,9 +294,9 @@ function App() {
 
                                 <input
                                     type="text"
-                                    name="canditate_name"
+                                    name="company_name"
                                     value={
-                                        editingApplication.canditate_name
+                                        editingApplication.company_name
                                     }
                                     onChange={
                                         handleEditChange

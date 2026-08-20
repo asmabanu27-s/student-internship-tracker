@@ -26,7 +26,7 @@ async function initializeDatabase() {
         await pool.query(`
             CREATE TABLE IF NOT EXISTS applications (
                 application_id SERIAL PRIMARY KEY,
-                canditate_name VARCHAR(255) NOT NULL,
+                company_name VARCHAR(255) NOT NULL,
                 role VARCHAR(255) NOT NULL,
                 applied_date DATE NOT NULL,
                 status VARCHAR(50) NOT NULL

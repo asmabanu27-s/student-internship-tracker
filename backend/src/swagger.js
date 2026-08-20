@@ -74,13 +74,13 @@ const options = {
                                 schema: {
                                     type: "object",
                                     required: [
-                                        "canditate_name",
+                                        "company_name",
                                         "role",
                                         "applied_date",
                                         "status"
                                     ],
                                     properties: {
-                                        canditate_name: {
+                                        company_name: {
                                             type: "string",
                                             example: "Google"
                                         },
@@ -147,13 +147,13 @@ const options = {
                                 schema: {
                                     type: "object",
                                     required: [
-                                        "canditate_name",
+                                        "company_name",
                                         "role",
                                         "applied_date",
                                         "status"
                                     ],
                                     properties: {
-                                        canditate_name: {
+                                        company_name: {
                                             type: "string",
                                             example: "Google"
                                         },
