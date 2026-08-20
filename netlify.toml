@@ -1,6 +1,6 @@
 [build]
 command = "npm install && npm --prefix backend install --omit=dev && npm --prefix frontend install && npm --prefix frontend run build"
-  publish = "./dist"
+  publish = "./fronetnd/dist"
 
 [functions]
   directory = "./netlify/functions"
