@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://gleeful-strudel-64d602.netlify.app"
+        "https://magenta-bienenstitch-b38612.netlify.app"
     ]
 }));
 app.use(express.json());
