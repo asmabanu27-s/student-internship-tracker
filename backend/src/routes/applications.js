@@ -52,7 +52,7 @@ router.get("/:id", async (req, res) => {
         const { id } = req.params;
 
         const result = await db.query(
-            "select * FROM applications WHERE application_id = $1 RETURNING *",
+            "select * FROM applications WHERE application_id = $1",
             [id]
         );
 
